@@ -1,0 +1,67 @@
+<!-- <p>blog works!</p> -->
+<div class="center">
+    <div class="container mb3">
+        <div class="container-fluid">
+            <div mat-dialog-content class="example-container">
+                <div class="container">
+                    <div class="leftcolumn">
+                        <div class="card">
+                            <div class="row">
+                                <div class="col-md-auto">
+                                    <p>
+                                        <span class="circle" style="font-family: Garamond, serif;">
+                                            {{fllatter}}
+                                        </span>
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <p>
+                                                <a routerLink="/userinfo/{{blog.userid._id}}/{{Username}}" style="color: black;">
+                                                     {{Username}}
+                                                </a>
+                                            </p>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <h5>{{blog.Date}}</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                 
+                            <div class="header">
+                                    <h1 class="title">{{blog.Blog_Title | titlecase}}</h1>
+                            </div>
+                            <div>
+                                <h3>{{blog.Blogs_Description}}</h3>
+                            </div>
+                   
+                            <div class="row-12">
+                                <div class="leftcolumn" *ngFor="let bg of blog.Blog_content">
+                                    <div class="card" >
+                                        <div class="fakeimg">
+                                            <img src="http://localhost:5000/{{bg.image}}" width="80%" >
+                                        </div>
+                                        <p [outerHTML]="bg.blogdata | replaceLineBreaks"></p>
+                                    </div>
+                                </div>
+                            
+                                <div class="container  gap-3">
+                                    <div class="row my-7  p-4" >
+                                        <div class="col-sm md-3" *ngFor="let op of blog.Hastag">
+                                            <p><span class="kio"><a routerLink="/hastags/{{op}}"> #{{op}}</a></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+      
